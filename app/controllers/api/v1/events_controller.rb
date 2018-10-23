@@ -18,7 +18,7 @@ class Api::V1::EventsController < ApplicationController
   # TODO: make create and destroy methods
 
   def create
-    @event = new Event(event_params)
+    @event = Event.new(event_params)
     if @event.save
       render json: @event, status: :accepted
     else
@@ -29,7 +29,7 @@ class Api::V1::EventsController < ApplicationController
   private
 
   def event_params
-    params.permit(:title, :start_date, :end_date)
+    params.permit(:title, :location, :start_date, :end_date)
   end
   #
   # def find_event
