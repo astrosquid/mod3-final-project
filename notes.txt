@@ -1,0 +1,7 @@
+Calendar App
+
+Classes
+
+User: has many events through dates
+Event: has many dates
+Date: belongs to user and event

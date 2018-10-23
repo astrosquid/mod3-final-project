@@ -17,11 +17,20 @@ class Api::V1::EventsController < ApplicationController
 
   # TODO: make create and destroy methods
 
+  def create
+    @event = new Event(event_params)
+    if @event.save
+      render json: @event, status: :accepted
+    else
+      render json: { errors: 'Event not accepted.' }, status: :unprocessible_entity
+    end
+  end
+
   private
 
-  # def event_params
-  #   params.permit(:title, :start_date, :end_date)
-  # end
+  def event_params
+    params.permit(:title, :start_date, :end_date)
+  end
   #
   # def find_event
   #   @event = Event.find(params[:id])
