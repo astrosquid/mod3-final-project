@@ -16,7 +16,7 @@ ActiveRecord::Schema.define(version: 2018_10_23_191736) do
   enable_extension "plpgsql"
 
   create_table "calendar_dates", force: :cascade do |t|
-    t.datetime "date"
+    t.date "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -24,8 +24,6 @@ ActiveRecord::Schema.define(version: 2018_10_23_191736) do
   create_table "events", force: :cascade do |t|
     t.string "title"
     t.string "location"
-    t.datetime "start_date"
-    t.datetime "end_date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.bigint "calendar_date_id"

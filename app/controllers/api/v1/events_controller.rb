@@ -22,17 +22,14 @@ class Api::V1::EventsController < ApplicationController
     if @event.save
       render json: @event, status: :accepted
     else
-      render json: { errors: 'Event not accepted.' }, status: :unprocessible_entity
+      render json: { errors: 'Event not accepted.', messages: @event.errors.full_messages }, status: :unprocessible_entity
     end
   end
 
   private
 
   def event_params
-    params.permit(:title, :location, :start_date, :end_date)
+    params.permit(:title, :location, :calendar_date_id)
   end
-  #
-  # def find_event
-  #   @event = Event.find(params[:id])
-  # end
+
 end
