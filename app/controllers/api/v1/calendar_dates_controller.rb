@@ -10,7 +10,7 @@ class Api::V1::CalendarDatesController < ApplicationController
     if @calendar_date.save
       render json: @calendar_date, status: :accepted
     else
-      render json: { errors: 'CalDate not accepted.' }, status: :unprocessible_entity
+      render json: { message: 'CalDate not accepted.', errors: @calendar_date.errors.full_messages }, status: :unprocessible_entity
     end
   end
 
