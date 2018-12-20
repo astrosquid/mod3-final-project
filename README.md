@@ -1,24 +1,14 @@
-# README
+# Calendar Backend 
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This is the backend API for my [Mod 3 Calendar project](https://github.com/astrosquid/mod3-final-project-frontend) at Flatiron.
 
-Things you may want to cover:
+Installation is easy!
 
-* Ruby version
+- make sure you're using Ruby version 2.3.3
+  - in the future, we'll be using 2.5.3 for Heroku deployment
+- clone this repo
+- cd into it and `bundle install`
+- setup the database with `rails db:create db:migrate`
+- turn on the server with `rails s` (it has to be on port 3000)
 
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+Please see the front end repo linked above for more info!
